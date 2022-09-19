@@ -368,6 +368,12 @@ footer ul li a:hover{
 .bg-falcon9{
     background-image: url(../imgaes/falcon-9.webp);
 }
+.bg-falconHeavy{
+    background-image: url(../imgaes/falcon-heavy.webp);
+}
+.bg-dargon{
+    background-image: url(../imgaes/dragon.webp);
+}
 .section-animate{
     animation: fadeIn 2s ease-in-out;
 }
@@ -378,6 +384,7 @@ footer ul li a:hover{
     transform: translate(-50%,-50%);
     text-transform: uppercase;
     text-align: center;
+    width: 80%;
 }
 .inner-section-center h3{
     font-size: 100px;
@@ -407,6 +414,7 @@ footer ul li a:hover{
     font-size: 24px;
     font-weight: 300;
 }
+
 /* media queries  */
 @media (max-width:960px) {
     /* hide the desktop menu  */
@@ -416,7 +424,11 @@ footer ul li a:hover{
     .mobile-only{
         display: block;
     }
+    .inner-section-center h3{
+        font-size: 75px;
+    }
 }
+
 @media (max-width: 600px) {
     .section-inner{
         bottom: 75px;
@@ -437,5 +449,17 @@ footer ul li a:hover{
     .logo{
         width: 150px;
         margin: auto;
+    }
+    .inner-section-center h3{
+        font-size: 50px;
+    }
+    .inner-section-center{
+        width: 80%;
+    }
+    .stats{
+        flex-direction: column;
+    }
+    .stats div {
+        margin-bottom: 20px;
     }
 }
