@@ -166,7 +166,35 @@ section h2{
     animation: fadeBounce 5s infinite;
 }
 
-
+.mobile-main-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 100%;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #000;
+}
+.mobile-main-menu ul{
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    flex-direction: column;
+    width: 100%;
+    padding: 50px;
+}
+.mobile-main-menu ul li{
+    width: 100%;
+    padding-bottom: 8px;
+    border-bottom: 1px #fff dotted;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: right;
+}
 /* animation  */
 @keyframes fadeInUp {
     0%{
@@ -176,6 +204,14 @@ section h2{
     100%{
         opacity: 1;
         transform: translateY(0);
+    }
+}
+@keyframes fadeIn {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }
 @keyframes fadeBounce{
@@ -220,12 +256,165 @@ footer ul li a:hover{
     color: #aaa;
 }
 
+/* humburger menu  */
+.hamburger{
+    position: fixed;
+    top: 40px;
+    right:20px  ;
+    border: none;
+    background:none;
+    width: 20px;
+    height: 20px;
+    z-index: 22;
+    cursor: pointer;
+}
+.humburger-top,
+.humburger-middle,
+.humburger-bottom{
+    position: absolute;
+    margin-top: 4px;
+    width: 20px;
+    height: 2px;
+    top:0;
+    left: 0;
+    background: #fff;
+    transition: all 0.5s;
+}
+.humburger-middle{
+    transform: translateY(5px);
+}
+.humburger-bottom{
+    transform: translateY(10px);
+}
 
+/* transition humburger to x when it opened  */
+.open{
+        transform: rotate(90deg);
+} 
+.open .humburger-top{
+    transform: rotate(45deg) translateX(6px) translateY(6px);
+} 
+.open .humburger-middle{
+    display: none;
+} 
+.open .humburger-bottom{
+    transform: rotate(-45deg) translateX(-6px) translateY(6px);
+} 
+
+
+.overlay-show{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0, 0.5);
+    z-index: 3;
+}
+
+.stop-scrolling{
+    overflow: hidden;
+}
+
+/* mobile main menu  */
+
+.mobile-main-menu{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 350px;
+    height: 100%;
+    z-index: 5;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #000;
+    transform:translateX(100%);
+    transition: transform 0.6s cubic-bezier(0.19,1, 0.22,1);
+}
+.mobile-open-menu{
+    transform: translateX(0);
+}
+
+.mobile-main-menu ul{
+    display: flex;
+    justify-content: center;
+    align-items:flex-end;
+    flex-direction: column;
+    width: 100%;
+    padding: 50px;
+}
+.mobile-main-menu ul li{
+    width: 100%;
+    padding-bottom: 8px;
+    border-bottom: 1px #555 dotted;
+    margin-bottom: 20px;
+    font-size: 20px;
+    text-transform: uppercase;
+    text-align: right;
+}
+.mobile-main-menu ul li a{
+    color: #fff;
+    transition: color 0.6s;
+}
+.mobile-main-menu ul li a:hover{
+    color: #aaa
+}
+.mobile-only{
+    display: none;
+}
+
+/* inner pages  */
+.bg-falcon9{
+    background-image: url(../imgaes/falcon-9.webp);
+}
+.section-animate{
+    animation: fadeIn 2s ease-in-out;
+}
+.inner-section-center{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-transform: uppercase;
+    text-align: center;
+}
+.inner-section-center h3{
+    font-size: 100px;
+    margin-bottom: 15px;
+    animation: fadeInUp .6s ease-in-out;
+}
+.inner-section-center p{
+    font-size: 20px;
+    animation: fadeInUp .6s ease-in-out .2s;
+    animation-fill-mode: both;
+}
+
+/* stats  */
+.stats{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 960px;
+    margin: 0 auto;
+    text-align: center;
+    text-transform: uppercase;
+}
+.stats div span {
+    font-size: 160px;
+}
+.stats div h4{
+    font-size: 24px;
+    font-weight: 300;
+}
 /* media queries  */
 @media (max-width:960px) {
     /* hide the desktop menu  */
     .desktop-main-menu{
         display: none;
+    }
+    .mobile-only{
+        display: block;
     }
 }
 @media (max-width: 600px) {
